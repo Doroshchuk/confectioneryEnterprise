@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConfectioneryEnterprise.Domain
 {
-    /// <summary>
-    /// Admin of the system
-    /// </summary>
-    public class Confectioner : Employee
+    public class Client : Person
     {
+        public string Password { get; set; }
     }
 }

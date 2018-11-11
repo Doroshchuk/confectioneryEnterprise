@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConfectioneryEnterprise.Domain
 {
-    public abstract class Employee : BaseId<int>
+    public abstract class Employee
     {
-        public string FirstName { get; set; }
-        public string SecondName { get; set; }
-        public string LastName { get; set; }
+        public Guid WorkNumber { get; set; }
+
+        public string Password { get; set; }
     }
 }
