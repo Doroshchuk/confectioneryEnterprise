@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfectioneryEnterprise
+namespace ConfectioneryEnterprise.Domain
 {
-    public class Class1
+    public class Confectioner : Employee
     {
     }
 }
