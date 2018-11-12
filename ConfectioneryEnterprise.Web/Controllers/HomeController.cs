@@ -26,5 +26,16 @@ namespace ConfectioneryEnterprise.Web.Controllers
 
             return View();
         }
+
+
+        public ActionResult Menu()
+        {
+            return View();
+        }
+
+        public ActionResult Personal()
+        {
+            return View();
+        }
     }
 }
