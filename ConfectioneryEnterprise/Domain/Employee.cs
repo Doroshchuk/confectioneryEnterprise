@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConfectioneryEnterprise.Domain
 {
-    public abstract class Employee
+    public abstract class Employee : Person
     {
-        public Guid WorkNumber { get; set; }
+        public int WorkNumber { get; set; }
 
         public string Password { get; set; }
     }
