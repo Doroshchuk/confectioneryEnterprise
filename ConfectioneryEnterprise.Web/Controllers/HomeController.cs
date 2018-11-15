@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ConfectioneryEnterprise.Core.Data;
 using ConfectioneryEnterprise.Domain;
 using ConfectioneryEnterprise.Web.Models;
+using ConfectioneryEnterprise.Web.ViewModels;
 
 namespace ConfectioneryEnterprise.Web.Controllers
 {
@@ -16,8 +17,6 @@ namespace ConfectioneryEnterprise.Web.Controllers
         public HomeController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-
-            _unitOfWork.ClientRepository.Create(new Client());
         }
 
         public ActionResult Index()
@@ -47,7 +46,20 @@ namespace ConfectioneryEnterprise.Web.Controllers
             return View();
         }
 
-        public ActionResult Personal()
+        [HttpGet]
+        public ActionResult Login(LoginViewModel loginVM)
+        {
+            var user = _unitOfWork.ClientRepository
+                .First(x => x.Login == loginVM.Login && x.Password == loginVM.Password);
+
+            if (user == null)
+                return View("Error");
+
+            return View("Personal");
+
+        }
+
+        public ActionResult Personal(LoginViewModel loginVM)
         {
             return View();
         }

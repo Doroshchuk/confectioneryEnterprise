@@ -13,14 +13,12 @@ namespace ConfectioneryEnterprise.Core.Data
 
         bool Delete(T item);
 
-        void Update(T item);
+        bool Update(Func<T, bool> predicate, T item);
 
-        T FindById(int id);
-
-        T First(Expression<Func<T, bool>> predicate);
+        T First(Func<T, bool> predicate);
 
         IEnumerable<T> GetAll();
 
-        IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
+        IEnumerable<T> Get(Func<T, bool> predicate);
     }
 }

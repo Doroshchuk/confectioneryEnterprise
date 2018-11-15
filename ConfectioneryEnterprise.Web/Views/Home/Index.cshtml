@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ConfectioneryEnterprise.Web.ViewModels.LoginViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -10,10 +11,10 @@
             <div class="banner-content col-lg-10 col-md-12 justify-content-center">
                 <h6 class="text-uppercase">Whenever we bake, bake with our heart</h6>
                 <h1>
-                    Love with baking items			
+                    Love with baking items
                 </h1>
                 <a href="#login" class="primary-btn squire text-uppercase mt-10">Login - to go personal account</a>
-            </div>											
+            </div>
         </div>
     </div>
 </section>
@@ -30,19 +31,28 @@
                     from the core of our heart to serve you
                 </h1>
 
-                <form action="#" id="login">
+                <form action="/Home/Login"
+                      asp-controller="Home"
+                      method="get"
+                      id="login">
                     <div class="mt-2">
-                        <input type="text" name="first_name" placeholder="Login" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Login'" required class="single-input">
+                        <input type="text"
+                               asp-for="Login"
+                               name="Login"
+                               placeholder="Login" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Login'" required class="single-input">
                     </div>
                     <div class="mt-10">
-                        <input type="text" name="last_name" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="single-input">
+                        <input type="password"
+                               asp-for="Password"
+                               name="Password"
+                               placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" required class="single-input">
                     </div>
-                </form>	
-
-                <a class="primary-btn squire mx-auto mt-20" href="#">Get Started Now</a>						
+                    <input type="submit" value="Get Started Now" class="primary-btn squire mx-auto mt-20" />
+                </form>
+                @*<a class="primary-btn squire mx-auto mt-20" href="#">Get Started Now</a>*@
             </div>
         </div>
-    </div>	
+    </div>
     <img class="about-img" src="/img/about-img.png" alt="">
 </section>
 <!-- End home-about Area -->

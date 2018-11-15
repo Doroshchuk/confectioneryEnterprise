@@ -40,32 +40,60 @@ namespace ConfectioneryEnterprise.Core.Data
 
         public bool Delete(T item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _items.Remove(item);
+                return Save();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
-        public T FindById(int id)
+        public T First(Func<T, bool> predicate)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return _items.FirstOrDefault(predicate);
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
-        public T First(Expression<Func<T, bool>> predicate)
+        public IEnumerable<T> Get(Func<T, bool> predicate)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
+            try
+            {
+                return _items.Where(predicate).ToList();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         public IEnumerable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _items.ToList();
         }
 
-        public void Update(T item)
+        public bool Update(Func<T, bool> predicate, T item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var oldItem = _items.FirstOrDefault(predicate);
+                oldItem = item;
+
+                _items.Add(oldItem);
+                return Save();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
 
         private bool Save()
