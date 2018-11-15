@@ -3,13 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ConfectioneryEnterprise.Core.Data;
+using ConfectioneryEnterprise.Domain;
+using ConfectioneryEnterprise.Web.Models;
 
 namespace ConfectioneryEnterprise.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private IUnitOfWork _unitOfWork;
+
+        public HomeController(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+
+            _unitOfWork.ClientRepository.Create(new Client());
+        }
+
         public ActionResult Index()
         {
+            //Generator.Generate();
+
             return View();
         }
 

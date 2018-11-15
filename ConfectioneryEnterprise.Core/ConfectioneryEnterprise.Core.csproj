@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Data\IUnitOfWork.cs" />
     <Compile Include="Data\UnitOfWork.cs" />
-    <Compile Include="JsonContext.cs" />
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

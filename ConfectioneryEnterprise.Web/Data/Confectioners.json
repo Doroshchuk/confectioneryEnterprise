@@ -1,0 +1,20 @@
+[
+  {
+    "WorkNumber": 100,
+    "Password": "12345",
+    "FirstName": "Valera",
+    "SecondName": null,
+    "LastName": "Petrovich",
+    "Phone": "123456789",
+    "Id": 1
+  },
+  {
+    "WorkNumber": 200,
+    "Password": "12345",
+    "FirstName": "Test",
+    "SecondName": null,
+    "LastName": "Testovich",
+    "Phone": "123456789",
+    "Id": 2
+  }
+]

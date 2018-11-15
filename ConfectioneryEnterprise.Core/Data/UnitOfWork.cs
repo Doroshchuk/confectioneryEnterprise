@@ -13,9 +13,9 @@ namespace ConfectioneryEnterprise.Core.Data
         private IRepository<Client> _clientRepository;
 
         public IRepository<Confectioner> ConfectionerRepository => 
-            _confectionerRepository ?? (_confectionerRepository = new Repository<Confectioner>(""));
+            _confectionerRepository ?? (_confectionerRepository = new Repository<Confectioner>("Confectioners"));
 
         public IRepository<Client> ClientRepository => 
-            _clientRepository ?? (_clientRepository = new Repository<Client>(""));
+            _clientRepository ?? (_clientRepository = new Repository<Client>("Clients"));
     }
 }

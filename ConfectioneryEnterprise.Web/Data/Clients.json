@@ -1,0 +1,38 @@
+[
+  {
+    "Login": "test@example.com",
+    "Password": "12345",
+    "FirstName": "Valera",
+    "SecondName": null,
+    "LastName": "Petrovich",
+    "Phone": "123456789",
+    "Id": 1
+  },
+  {
+    "Login": "admin@example.com",
+    "Password": "12345",
+    "FirstName": "Test",
+    "SecondName": null,
+    "LastName": "Testovich",
+    "Phone": "123456789",
+    "Id": 2
+  },
+  {
+    "Login": null,
+    "Password": null,
+    "FirstName": null,
+    "SecondName": null,
+    "LastName": null,
+    "Phone": null,
+    "Id": 0
+  },
+  {
+    "Login": null,
+    "Password": null,
+    "FirstName": null,
+    "SecondName": null,
+    "LastName": null,
+    "Phone": null,
+    "Id": 0
+  }
+]
