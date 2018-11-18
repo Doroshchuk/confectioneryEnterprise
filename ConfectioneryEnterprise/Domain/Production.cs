@@ -10,7 +10,7 @@ namespace ConfectioneryEnterprise.Domain
     {
         public IList<Ingredient> Ingredients { get; set; }
         public IList<Confectioner> Confectioners { get; set; }
-        public Recipe Recipe { get; set; }
+        public Plan Plan { get; set; }
 
         public Production()
         {

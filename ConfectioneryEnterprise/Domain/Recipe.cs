@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConfectioneryEnterprise.Domain
 {
-    public abstract class Recipe : BaseId<int>
+    public class Recipe : BaseId<int>
     {
+        public string Name { get; set; }
         public IList<Ingredient> Ingredients { get; set; }
 
-        protected Recipe()
+        public Recipe()
         {
             Ingredients = new List<Ingredient>();
         }

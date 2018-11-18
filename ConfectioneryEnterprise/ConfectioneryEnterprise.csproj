@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\BaseId.cs" />
-    <Compile Include="Domain\CakeRecipe.cs" />
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Confectioner.cs" />
     <Compile Include="Domain\Employee.cs" />

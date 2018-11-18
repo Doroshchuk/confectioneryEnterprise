@@ -11,6 +11,18 @@ namespace ConfectioneryEnterprise.Core.Data
     {
         IRepository<Confectioner> ConfectionerRepository { get; }
 
+        IRepository<Pastry> PastryRepository { get; }
+
+        IRepository<Ingredient> IngredientRepository { get; }
+
+        IRepository<Recipe> RecipeRepository { get; }
+
+        IRepository<PlanComponent> PlanComponentRepository { get; }
+
+        IRepository<Plan> PlanRepository { get; }
+
+        IRepository<Production> ProductionRepository { get; }
+
         IRepository<Client> ClientRepository { get; }
     }
 }
