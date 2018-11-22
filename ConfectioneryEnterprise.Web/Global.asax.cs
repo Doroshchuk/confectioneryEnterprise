@@ -8,6 +8,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 using ConfectioneryEnterprise.Core.Data;
+using ConfectioneryEnterprise.Core.Server;
 
 namespace ConfectioneryEnterprise.Web
 {
@@ -31,6 +32,8 @@ namespace ConfectioneryEnterprise.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            SynchronousSocketClient.StartClient();
         }
     }
 }

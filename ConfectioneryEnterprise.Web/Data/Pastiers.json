@@ -1,1 +1,202 @@
-[{"Type":"cake","Name":"Lasunka","Brand":"DDV","Consistency":[{"Name":"egg","Quantity":4,"Units":"units","Id":1},{"Name":"sugar","Quantity":130,"Units":"grams","Id":2},{"Name":"apple","Quantity":600,"Units":"grams","Id":3},{"Name":"cinnamon","Quantity":7,"Units":"grams","Id":4},{"Name":"flour","Quantity":130,"Units":"grams","Id":5}],"ShelfLife":2,"DateOfManufacture":"2018-11-18T15:20:50","Id":1}]
+[
+  {
+    "Type": "cake",
+    "Name": "Lasunka",
+    "Brand": "DDV",
+    "Consistency": [
+      {
+        "Name": "egg",
+        "Quantity": 4,
+        "Units": "units",
+        "Id": 1
+      },
+      {
+        "Name": "sugar",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 2
+      },
+      {
+        "Name": "apple",
+        "Quantity": 600,
+        "Units": "grams",
+        "Id": 3
+      },
+      {
+        "Name": "cinnamon",
+        "Quantity": 7,
+        "Units": "grams",
+        "Id": 4
+      },
+      {
+        "Name": "flour",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 5
+      }
+    ],
+    "ShelfLife": 2,
+    "DateOfManufacture": "2018-11-18T15:20:50",
+    "Id": 1
+  },
+  {
+    "Type": "cake",
+    "Name": "Biskvit",
+    "Brand": "Roshen",
+    "Consistency": [
+      {
+        "Name": "egg",
+        "Quantity": 4,
+        "Units": "units",
+        "Id": 1
+      },
+      {
+        "Name": "sugar",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 2
+      },
+      {
+        "Name": "apple",
+        "Quantity": 600,
+        "Units": "grams",
+        "Id": 3
+      },
+      {
+        "Name": "cinnamon",
+        "Quantity": 7,
+        "Units": "grams",
+        "Id": 4
+      },
+      {
+        "Name": "flour",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 5
+      }
+    ],
+    "ShelfLife": 3,
+    "DateOfManufacture": "2018-11-18T15:20:50",
+    "Id": 2
+  },
+  {
+    "Type": "cake",
+    "Name": "Korivka",
+    "Brand": "Roshen",
+    "Consistency": [
+      {
+        "Name": "egg",
+        "Quantity": 4,
+        "Units": "units",
+        "Id": 1
+      },
+      {
+        "Name": "sugar",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 2
+      },
+      {
+        "Name": "apple",
+        "Quantity": 600,
+        "Units": "grams",
+        "Id": 3
+      },
+      {
+        "Name": "cinnamon",
+        "Quantity": 7,
+        "Units": "grams",
+        "Id": 4
+      },
+      {
+        "Name": "flour",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 5
+      }
+    ],
+    "ShelfLife": 3,
+    "DateOfManufacture": "2018-11-18T15:20:50",
+    "Id": 3
+  },
+  {
+    "Type": "cake",
+    "Name": "Chocolate",
+    "Brand": "BBK",
+    "Consistency": [
+      {
+        "Name": "egg",
+        "Quantity": 4,
+        "Units": "units",
+        "Id": 1
+      },
+      {
+        "Name": "sugar",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 2
+      },
+      {
+        "Name": "apple",
+        "Quantity": 600,
+        "Units": "grams",
+        "Id": 3
+      },
+      {
+        "Name": "cinnamon",
+        "Quantity": 7,
+        "Units": "grams",
+        "Id": 4
+      },
+      {
+        "Name": "flour",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 5
+      }
+    ],
+    "ShelfLife": 3,
+    "DateOfManufacture": "2018-11-18T15:20:50",
+    "Id": 4
+  },
+  {
+    "Type": "cake",
+    "Name": "Pingvin",
+    "Brand": "BBK",
+    "Consistency": [
+      {
+        "Name": "egg",
+        "Quantity": 4,
+        "Units": "units",
+        "Id": 1
+      },
+      {
+        "Name": "sugar",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 2
+      },
+      {
+        "Name": "apple",
+        "Quantity": 600,
+        "Units": "grams",
+        "Id": 3
+      },
+      {
+        "Name": "cinnamon",
+        "Quantity": 7,
+        "Units": "grams",
+        "Id": 4
+      },
+      {
+        "Name": "flour",
+        "Quantity": 130,
+        "Units": "grams",
+        "Id": 5
+      }
+    ],
+    "ShelfLife": 3,
+    "DateOfManufacture": "2018-11-18T15:20:50",
+    "Id": 5
+  }
+]
