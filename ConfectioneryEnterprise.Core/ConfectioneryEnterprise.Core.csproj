@@ -48,6 +48,9 @@
     <Compile Include="Data\IRepository.cs" />
     <Compile Include="Data\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\AsynchronousSocketClient.cs" />
+    <Compile Include="Server\AsynchronousSocketServer.cs" />
+    <Compile Include="Server\StateObject.cs" />
     <Compile Include="Server\SynchronousSocketClient.cs" />
     <Compile Include="Server\SynchronousSocketServer.cs" />
   </ItemGroup>

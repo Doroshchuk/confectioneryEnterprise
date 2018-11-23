@@ -33,7 +33,8 @@ namespace ConfectioneryEnterprise.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            SynchronousSocketClient.StartClient();
+            //SynchronousSocketClient.StartClient();
+            AsynchronousSocketClient.StartClient();
         }
     }
 }

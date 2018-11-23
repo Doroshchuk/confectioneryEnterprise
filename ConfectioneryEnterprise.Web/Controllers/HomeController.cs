@@ -46,7 +46,8 @@ namespace ConfectioneryEnterprise.Web.Controllers
             var pastry = _unitOfWork.PastryRepository.Get(x => x.Id == id).FirstOrDefault();
 
             string message = $"\nBuy product - name {pastry.Name}, brand {pastry.Brand}, type {pastry.Type}";
-            SynchronousSocketClient.SendMessage(message);
+            //SynchronousSocketClient.SendMessage(message);
+            AsynchronousSocketClient.SendMessage(message);
 
             var pastries = _unitOfWork.PastryRepository.GetAll().ToList();
             return View("Menu", pastries);
@@ -66,7 +67,8 @@ namespace ConfectioneryEnterprise.Web.Controllers
                 .First(x => x.Login == loginVM.Login && x.Password == loginVM.Password);
 
             string message = $"\nLogin client: {user.Login}\nPassword: {user.Password}";
-            SynchronousSocketClient.SendMessage(message);
+            //SynchronousSocketClient.SendMessage(message);
+            AsynchronousSocketClient.SendMessage(message);
 
             if (user == null)
                 return View("Error");

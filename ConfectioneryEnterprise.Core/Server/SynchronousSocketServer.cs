@@ -39,7 +39,7 @@ namespace ConfectioneryEnterprise.Core.Server
                 listener.Listen(10);
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Start server: OK");
+                Console.WriteLine("Start synchronous server: OK");
                 Console.ForegroundColor = ConsoleColor.White;
 
                 // Start listening for connections
