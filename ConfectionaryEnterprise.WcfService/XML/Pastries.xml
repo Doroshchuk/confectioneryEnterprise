@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Pastries>
+  <Pastry Id="1">
+    <Type>Cake</Type>
+    <Name>Lasunka</Name>
+    <Brand>DDV</Brand>
+    <Consistency>
+      <Ingredient Id="1">
+        <Name>Egg</Name>
+        <Quantity>4</Quantity>
+        <Units>Units</Units>
+      </Ingredient>
+      <Ingredient Id="2">
+        <Name>Sugar</Name>
+        <Quantity>130</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+      <Ingredient Id="3">
+        <Name>Apple</Name>
+        <Quantity>600</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+      <Ingredient Id="4">
+        <Name>Cinnamon</Name>
+        <Quantity>7</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+      <Ingredient Id="5">
+        <Name>Flour</Name>
+        <Quantity>130</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+    </Consistency>
+    <ShelfLife>2</ShelfLife>
+    <DateOfManufacture>2018-12-09</DateOfManufacture>
+  </Pastry>
+</Pastries>

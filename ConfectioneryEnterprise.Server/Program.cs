@@ -11,8 +11,8 @@ namespace ConfectioneryEnterprise.Server
     {
         static int Main(string[] args)
         {
-            AsynchronousSocketServer.StartListening();
-            //SynchronousSocketServer.StartListening();
+            //AsynchronousSocketServer.StartListening();
+            SynchronousSocketServer.StartListening();
             return 0;
         }
     }

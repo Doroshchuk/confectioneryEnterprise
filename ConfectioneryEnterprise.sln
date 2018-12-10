@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfectioneryEnterprise.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfectioneryEnterprise.Server", "ConfectioneryEnterprise.Server\ConfectioneryEnterprise.Server.csproj", "{DB7343B0-8DAB-432C-9A46-1ECEABE5BE83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfectioneryEnterprise.WcfService", "ConfectionaryEnterprise.WcfService\ConfectioneryEnterprise.WcfService.csproj", "{8D6AB322-92EE-46FB-AFE6-21BC66CD2074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfectioneryEnterprise.Host", "ConfectioneryEnterprise.Host\ConfectioneryEnterprise.Host.csproj", "{D6323122-C7F1-411A-B3FC-585DEEE61AF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{DB7343B0-8DAB-432C-9A46-1ECEABE5BE83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB7343B0-8DAB-432C-9A46-1ECEABE5BE83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB7343B0-8DAB-432C-9A46-1ECEABE5BE83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D6AB322-92EE-46FB-AFE6-21BC66CD2074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D6AB322-92EE-46FB-AFE6-21BC66CD2074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D6AB322-92EE-46FB-AFE6-21BC66CD2074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D6AB322-92EE-46FB-AFE6-21BC66CD2074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6323122-C7F1-411A-B3FC-585DEEE61AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6323122-C7F1-411A-B3FC-585DEEE61AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6323122-C7F1-411A-B3FC-585DEEE61AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6323122-C7F1-411A-B3FC-585DEEE61AF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

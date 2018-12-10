@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83912B60-079A-487D-B9E0-96561B525845}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConfectioneryEnterprise</RootNamespace>
-    <AssemblyName>ConfectioneryEnterprise</AssemblyName>
+    <ProjectGuid>{D6323122-C7F1-411A-B3FC-585DEEE61AF3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConfectioneryEnterprise.Host</RootNamespace>
+    <AssemblyName>ConfectioneryEnterprise.Host</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,7 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,19 +44,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\BaseId.cs" />
-    <Compile Include="Domain\Client.cs" />
-    <Compile Include="Domain\Confectioner.cs" />
-    <Compile Include="Domain\Employee.cs" />
-    <Compile Include="Domain\Ingredient.cs" />
-    <Compile Include="Domain\Pastry.cs" />
-    <Compile Include="Domain\Person.cs" />
-    <Compile Include="Domain\Plan.cs" />
-    <Compile Include="Domain\PlanComponent.cs" />
-    <Compile Include="Domain\Production.cs" />
-    <Compile Include="Domain\Recipe.cs" />
-    <Compile Include="Domain\Shop.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConfectionaryEnterprise.WcfService\ConfectioneryEnterprise.WcfService.csproj">
+      <Project>{8d6ab322-92ee-46fb-afe6-21bc66cd2074}</Project>
+      <Name>ConfectioneryEnterprise.WcfService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConfectioneryEnterprise\ConfectioneryEnterprise.csproj">
+      <Project>{83912b60-079a-487d-b9e0-96561b525845}</Project>
+      <Name>ConfectioneryEnterprise</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
