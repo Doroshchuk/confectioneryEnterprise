@@ -1,4 +1,5 @@
-﻿using ConfectioneryEnterprise.Domain;
+﻿using ConfectionaryEnterprise.WcfService.Contract.PastryContract.IngredientContract;
+using ConfectioneryEnterprise.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace ConfectioneryEnterprise.WcfService.Contract.PastryService
+namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
 {
     [ServiceContract]
-    public interface IPastryService
+    public interface IPastryService : IIngredientService
     {
         [OperationContract]
         bool IsFresh(int id);

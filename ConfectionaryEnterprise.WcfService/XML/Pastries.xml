@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Pastries>
   <Pastry Id="1">
     <Type>Cake</Type>
@@ -33,5 +33,63 @@
     </Consistency>
     <ShelfLife>2</ShelfLife>
     <DateOfManufacture>2018-12-09</DateOfManufacture>
+  </Pastry>
+  <Pastry Id="2">
+    <Type>Cake</Type>
+    <Name>Korivka</Name>
+    <Brand>DDV</Brand>
+    <Consistency>
+      <Ingredient Id="1">
+        <Name>Egg</Name>
+        <Quantity>4</Quantity>
+        <Units>Units</Units>
+      </Ingredient>
+      <Ingredient Id="2">
+        <Name>Sugar</Name>
+        <Quantity>130</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+      <Ingredient Id="3">
+        <Name>Apple</Name>
+        <Quantity>600</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+      <Ingredient Id="4">
+        <Name>Cinnamon</Name>
+        <Quantity>7</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+      <Ingredient Id="5">
+        <Name>Flour</Name>
+        <Quantity>130</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+    </Consistency>
+    <ShelfLife>3</ShelfLife>
+    <DateOfManufacture>2018-12-16T00:00:00</DateOfManufacture>
+  </Pastry>
+  <Pastry Id="3">
+    <Type>Cake</Type>
+    <Name>Mak</Name>
+    <Brand>DDV</Brand>
+    <Consistency>
+      <Ingredient Id="1">
+        <Name>Egg</Name>
+        <Quantity>4</Quantity>
+        <Units>Units</Units>
+      </Ingredient>
+      <Ingredient Id="3">
+        <Name>Apple</Name>
+        <Quantity>600</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+      <Ingredient Id="5">
+        <Name>Flour</Name>
+        <Quantity>130</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+    </Consistency>
+    <ShelfLife>2</ShelfLife>
+    <DateOfManufacture>2018-12-16T00:00:00</DateOfManufacture>
   </Pastry>
 </Pastries>

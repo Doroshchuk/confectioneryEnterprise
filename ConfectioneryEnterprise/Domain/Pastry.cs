@@ -26,7 +26,6 @@ namespace ConfectioneryEnterprise.Domain
         public Pastry()
         {
             Consistency = new List<Ingredient>();
-            Brand = "DDV";
         }
     }
 }
