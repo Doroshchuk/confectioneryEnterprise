@@ -16,7 +16,6 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
 
         public void SetPastry(Pastry pastry)
         {
-            //var document = LoadDocument(FileName);
             var file = ConfigurationManager.AppSettings[FileName];
             var document = XDocument.Load(file);
 
