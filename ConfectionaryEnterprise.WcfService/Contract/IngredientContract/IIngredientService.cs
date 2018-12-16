@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfectionaryEnterprise.WcfService.Contract.PastryContract.IngredientContract
+namespace ConfectionaryEnterprise.WcfService.Contract.IngredientContract
 {
     [ServiceContract]
     public interface IIngredientService

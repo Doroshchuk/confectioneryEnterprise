@@ -1,4 +1,4 @@
-﻿using ConfectionaryEnterprise.WcfService.Contract.PastryContract.IngredientContract;
+﻿using ConfectionaryEnterprise.WcfService.Contract.IngredientContract;
 using ConfectioneryEnterprise.Domain;
 using System;
 using System.Collections.Generic;

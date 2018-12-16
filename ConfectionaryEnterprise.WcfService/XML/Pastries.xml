@@ -92,4 +92,28 @@
     <ShelfLife>2</ShelfLife>
     <DateOfManufacture>2018-12-16T00:00:00</DateOfManufacture>
   </Pastry>
+  <Pastry Id="4">
+    <Type>Cake</Type>
+    <Name>Ice</Name>
+    <Brand>DDV</Brand>
+    <Consistency>
+      <Ingredient Id="2">
+        <Name>Sugar</Name>
+        <Quantity>130</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+      <Ingredient Id="3">
+        <Name>Apple</Name>
+        <Quantity>600</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+      <Ingredient Id="5">
+        <Name>Flour</Name>
+        <Quantity>130</Quantity>
+        <Units>Grams</Units>
+      </Ingredient>
+    </Consistency>
+    <ShelfLife>2</ShelfLife>
+    <DateOfManufacture>2018-12-15T00:00:00</DateOfManufacture>
+  </Pastry>
 </Pastries>

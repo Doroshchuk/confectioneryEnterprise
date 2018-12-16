@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace ConfectionaryEnterprise.WcfService.Contract.PastryContract.IngredientContract
+namespace ConfectionaryEnterprise.WcfService.Contract.IngredientContract
 {
     public class IngredientService
     {
