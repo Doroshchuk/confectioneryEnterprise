@@ -43,12 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\BaseId.cs" />
+    <Compile Include="Domain\BoxOfCandies.cs" />
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Confectioner.cs" />
     <Compile Include="Domain\Employee.cs" />
     <Compile Include="Domain\Ingredient.cs" />
     <Compile Include="Domain\Pastry.cs" />
     <Compile Include="Domain\Person.cs" />
+    <Compile Include="Domain\Pie.cs" />
     <Compile Include="Domain\Plan.cs" />
     <Compile Include="Domain\PlanComponent.cs" />
     <Compile Include="Domain\Production.cs" />

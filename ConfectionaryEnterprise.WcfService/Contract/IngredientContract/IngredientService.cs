@@ -12,11 +12,11 @@ namespace ConfectionaryEnterprise.WcfService.Contract.IngredientContract
 {
     public class IngredientService
     {
-        private string FileName => "fileIngredients";
+        private string IngredientsFileName => "fileIngredients";
 
         public Ingredient GetIngredient(int id)
         {
-            var file = ConfigurationManager.AppSettings[FileName];
+            var file = ConfigurationManager.AppSettings[IngredientsFileName];
             var document = XDocument.Load(file);
 
             var result = new Ingredient();
@@ -30,7 +30,7 @@ namespace ConfectionaryEnterprise.WcfService.Contract.IngredientContract
 
         public void SetIngredient(Ingredient ingredient)
         {
-            var file = ConfigurationManager.AppSettings[FileName];
+            var file = ConfigurationManager.AppSettings[IngredientsFileName];
             var document = XDocument.Load(file);
 
             document.Root.Add(new XElement("Ingredient",
@@ -38,7 +38,7 @@ namespace ConfectionaryEnterprise.WcfService.Contract.IngredientContract
                               new XElement("Name", ingredient.Name),
                               new XElement("Quantity", ingredient.Quantity),
                               new XElement("Units", ingredient.Units)));
-            document.Save(FileName);
+            document.Save(IngredientsFileName);
         }
     }
 }

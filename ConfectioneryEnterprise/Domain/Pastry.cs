@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace ConfectioneryEnterprise.Domain
 {
+    [KnownType(typeof(BoxOfCandies))]
+    [KnownType(typeof(Pie))]
     [DataContract]
     public class Pastry : BaseId<int>
     {

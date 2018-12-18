@@ -11,7 +11,7 @@ using System.Xml.Linq;
 namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
 {
     [ServiceContract]
-    public interface IPastryService : IIngredientService
+    public interface IPastryService
     {
         [OperationContract]
         bool IsFresh(int id);

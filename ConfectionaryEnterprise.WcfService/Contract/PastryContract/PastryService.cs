@@ -3,6 +3,7 @@ using ConfectioneryEnterprise.Domain;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +13,11 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
 {
     public class PastryService : IngredientService, IPastryService, IIngredientService
     {
-        private string FileName => "filePastries";
+        private string PastriesFileName => "filePastries";
 
         public void SetPastry(Pastry pastry)
         {
-            var file = ConfigurationManager.AppSettings[FileName];
+            var file = ConfigurationManager.AppSettings[PastriesFileName];
             var document = XDocument.Load(file);
 
             XElement[] consistencyXML = new XElement[pastry.Consistency.Count];
@@ -28,24 +29,56 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
                                    new XElement("Quantity", pastry.Consistency[i].Quantity),
                                    new XElement("Units", pastry.Consistency[i].Units));
             }
-            document.Root.Add(new XElement("Pastry", 
-                              new XAttribute("Id", pastry.Id),
-                              new XElement("Type", pastry.Type),
-                              new XElement("Name", pastry.Name),
-                              new XElement("Brand", pastry.Brand),
-                              new XElement("Consistency", consistencyXML),
-                              new XElement("ShelfLife", pastry.ShelfLife),
-                              new XElement("DateOfManufacture", pastry.DateOfManufacture)));
+
+            var pastryXMLElement = new XElement("Pastry",
+                                      new XAttribute("Id", pastry.Id),
+                                      new XElement("Type", pastry.Type),
+                                      new XElement("Name", pastry.Name),
+                                      new XElement("Brand", pastry.Brand),
+                                      new XElement("Consistency", consistencyXML),
+                                      new XElement("ShelfLife", pastry.ShelfLife),
+                                      new XElement("DateOfManufacture", pastry.DateOfManufacture));
+
+            if (pastry is Pie)
+            {
+                pastryXMLElement.Add(new XAttribute("Kind", "Pie"), 
+                                        new XElement("Diameter", ((Pie) pastry).Diameter.ToString(CultureInfo.GetCultureInfo("en-US"))));
+            }
+            else
+            {
+                pastryXMLElement.Add(new XAttribute("Kind", "BoxOfCandies"),
+                                        new XElement("QuantityOfCandies", ((BoxOfCandies)pastry).QuantityOfCandies.ToString(CultureInfo.GetCultureInfo("en-US"))));
+            }
+
+            document.Root.Add(pastryXMLElement);
             document.Save(file);
         }
 
         public Pastry GetPastry(int id)
         {
-            var file = ConfigurationManager.AppSettings[FileName];
+            var file = ConfigurationManager.AppSettings[PastriesFileName];
             var document = XDocument.Load(file);
 
-            var result = new Pastry();
+            Pastry result;
             var pastry = document.Descendants("Pastry").FirstOrDefault(x => x.Attribute("Id").Value == id.ToString());
+
+            var kind = pastry.Attribute("Kind").Value;
+
+            switch (kind)
+            {
+                case "Pie":
+                    result = new Pie();
+                    ((Pie)result).Diameter = double.Parse(pastry.Element("Diameter").Value, CultureInfo.GetCultureInfo("en-US"));
+                    break;
+                case "BoxOfCandies":
+                    result = new BoxOfCandies();
+                    ((BoxOfCandies)result).QuantityOfCandies = int.Parse(pastry.Element("QuantityOfCandies").Value, CultureInfo.GetCultureInfo("en-US"));
+                    break;
+                default:
+                    result = new Pastry();
+                    break;
+            }
+
             result.Id = int.Parse(pastry.Attribute("Id").Value);
             result.Type = pastry.Element("Type").Value;
             result.Name = pastry.Element("Name").Value;
