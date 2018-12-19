@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Contract\IDuplexControlService.cs" />
     <Compile Include="Contract\IDuplexFreshnessControlService.cs" />
+    <Compile Include="Contract\IInfoService.cs" />
     <Compile Include="Contract\ILockService.cs" />
     <Compile Include="Contract\IngredientContract\IIngredientService.cs" />
     <Compile Include="Contract\IngredientContract\IIngredientServiceNew.cs" />

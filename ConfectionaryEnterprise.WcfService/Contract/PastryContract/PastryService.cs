@@ -15,7 +15,7 @@ using System.Xml.Linq;
 namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
 {
     [ServiceBehavior (InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Single)]
-    public class PastryService : IngredientService, IPastryService, IIngredientService, IOneWayService,  IDuplexControlService, ILockService // IDuplexFreshnessControlService
+    public class PastryService : IngredientService, IPastryService, IIngredientService, IOneWayService,  IDuplexControlService, ILockService, IInfoService // IDuplexFreshnessControlService
     {
         private string PastriesFileName => "filePastries";
         private int _counter = 0;
@@ -157,6 +157,26 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
             Console.WriteLine("Thread {0} has started Lock2()", Thread.CurrentThread.ManagedThreadId);
             Thread.Sleep(5000);
             Console.WriteLine("Thread {0} has completed Lock2()", Thread.CurrentThread.ManagedThreadId);
+        }
+
+        public string DoWork()
+        {
+            string result = string.Empty;
+
+            if (!ServiceSecurityContext.Current.PrimaryIdentity.IsAuthenticated)
+            {
+                result = "Пльзователь не идентифицирован!!!\nОперация прервана.";
+                Console.WriteLine(result);
+                return result;
+            }
+
+            result = string.Format("Date: {0}\nAuth type: {1}\nUser: {2}", DateTime.Now.ToString(),
+                ServiceSecurityContext.Current.PrimaryIdentity.AuthenticationType,
+                ServiceSecurityContext.Current.PrimaryIdentity.Name);
+
+            Console.WriteLine(result);
+
+            return result;
         }
     }
 }
