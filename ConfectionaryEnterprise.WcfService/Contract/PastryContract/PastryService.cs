@@ -1,17 +1,20 @@
-﻿using ConfectionaryEnterprise.WcfService.Contract.IngredientContract;
+﻿using ConfectionaryEnterprise.WcfService.Contract;
+using ConfectionaryEnterprise.WcfService.Contract.IngredientContract;
 using ConfectioneryEnterprise.Domain;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Globalization;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
 {
-    public class PastryService : IngredientService, IPastryService, IIngredientService
+    public class PastryService : IngredientService, IPastryService, IIngredientService, IOneWayService, IDuplexFreshnessControlService
     {
         private string PastriesFileName => "filePastries";
 
@@ -103,6 +106,33 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
             Pastry pastry = GetPastry(id);
             bool isFresh = DateTime.Today.Subtract(pastry.DateOfManufacture).TotalDays <= pastry.ShelfLife;
             return isFresh;
+        }
+
+        public void IsFreshPastry(int pastryId)
+        {
+            Pastry pastry = GetPastry(pastryId);
+            bool isFresh = DateTime.Today.Subtract(pastry.DateOfManufacture).TotalDays <= pastry.ShelfLife;
+            OperationContext.Current.GetCallbackChannel<IDuplexFreshnessControlCallback>().SendResult(isFresh);
+        }
+
+        public void RequestOperation()
+        {
+            Thread.Sleep(5000);
+        }
+
+        public void RequestOperationException()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OneWayOperation()
+        {
+            Thread.Sleep(5000);
+        }
+
+        public void OneWayOperationException()
+        {
+            throw new NotImplementedException();
         }
     }
 }
