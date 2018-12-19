@@ -14,9 +14,11 @@ using System.Xml.Linq;
 
 namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
 {
-    public class PastryService : IngredientService, IPastryService, IIngredientService, IOneWayService, IDuplexFreshnessControlService
+    [ServiceBehavior (InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Single)]
+    public class PastryService : IngredientService, IPastryService, IIngredientService, IOneWayService,  IDuplexControlService, ILockService // IDuplexFreshnessControlService
     {
         private string PastriesFileName => "filePastries";
+        private int _counter = 0;
 
         public void SetPastry(Pastry pastry)
         {
@@ -133,6 +135,28 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
         public void OneWayOperationException()
         {
             throw new NotImplementedException();
+        }
+
+        public void GetCounter()
+        {
+            OperationContext.Current.GetCallbackChannel<IDuplexControlCallback>().SendResult(_counter++);
+            var sid = OperationContext.Current.SessionId;
+
+            Console.WriteLine("Session: {0}\n Counter = {1}", sid, _counter);
+        }
+
+        public void Lock1()
+        {
+            Console.WriteLine("Thread {0} has started Lock1()", Thread.CurrentThread.ManagedThreadId);
+            Thread.Sleep(5000);
+            Console.WriteLine("Thread {0} has completed Lock1()", Thread.CurrentThread.ManagedThreadId);
+        }
+
+        public void Lock2()
+        {
+            Console.WriteLine("Thread {0} has started Lock2()", Thread.CurrentThread.ManagedThreadId);
+            Thread.Sleep(5000);
+            Console.WriteLine("Thread {0} has completed Lock2()", Thread.CurrentThread.ManagedThreadId);
         }
     }
 }
