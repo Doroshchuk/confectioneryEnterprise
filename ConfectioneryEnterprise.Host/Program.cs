@@ -6,7 +6,6 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel.Description;
-using ConfectionaryEnterprise.WcfService.Contract.IngredientContract;
 
 namespace ConfectioneryEnterprise.Host
 {
@@ -14,7 +13,7 @@ namespace ConfectioneryEnterprise.Host
     {
         static void Main()
         {
-            //#Laboratorna #5
+            //#Laboratorna #3
             using (var host = new ServiceHost(typeof(PastryService)))
             {
                 host.Open();
@@ -22,7 +21,7 @@ namespace ConfectioneryEnterprise.Host
                 Console.ReadLine();
             }
 
-            //Laboratorna #6
+            //Laboratorna #4
             //using (var host = new ServiceHost(typeof(PastryService)))
             //{
             //    var mexBehavior = new ServiceMetadataBehavior
