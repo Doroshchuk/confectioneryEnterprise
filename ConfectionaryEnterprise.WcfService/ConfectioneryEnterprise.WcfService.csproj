@@ -53,6 +53,9 @@
     <Compile Include="Contract\IngredientContract\IIngredientServiceNew.cs" />
     <Compile Include="Contract\IngredientContract\IngredientService.cs" />
     <Compile Include="Contract\IOneWayService.cs" />
+    <Compile Include="Contract\MainErrorHandler.cs" />
+    <Compile Include="Contract\MainErrorHandlerBehavior.cs" />
+    <Compile Include="Contract\NullElementFault.cs" />
     <Compile Include="Contract\PastryContract\IPastryService.cs" />
     <Compile Include="Contract\PastryContract\IPastryServiceNew.cs" />
     <Compile Include="Contract\PastryContract\PastryService.cs" />

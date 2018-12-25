@@ -42,7 +42,8 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
                                       new XElement("Brand", pastry.Brand),
                                       new XElement("Consistency", consistencyXML),
                                       new XElement("ShelfLife", pastry.ShelfLife),
-                                      new XElement("DateOfManufacture", pastry.DateOfManufacture));
+                                      new XElement("DateOfManufacture", pastry.DateOfManufacture),
+                                      new XElement("StorageTemperature", pastry.StorageTemperature));
 
             if (pastry is Pie)
             {
@@ -88,6 +89,7 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
             result.Type = pastry.Element("Type").Value;
             result.Name = pastry.Element("Name").Value;
             result.Brand = pastry.Element("Brand").Value;
+
             foreach(XElement ingredient in pastry.Element("Consistency").Descendants("Ingredient"))
             {
                 result.Consistency.Add(new Ingredient
@@ -100,6 +102,31 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
             }
             result.ShelfLife = int.Parse(pastry.Element("ShelfLife").Value);
             result.DateOfManufacture = DateTime.Parse(pastry.Element("DateOfManufacture").Value);
+
+            //Laboratorna #9
+            //Типизированый FaultException
+            // Генерируем исключение на стороне сервиса, при использовании wsHttpBinding
+            var storageTemperature = pastry.Element("StorageTemperature");
+            //Основная особенность FaultException -> не уничтожает канал связи сервиса с клиентом
+            //if (storageTemperature == null)
+            //{
+            //    //Обычный FaultException
+            //    //throw new FaultException("Element STORAGETEMPERATURE is not founded.", new FaultCode("NullElementException"));
+            //    var fault = new NullElementFault
+            //    {
+            //        Id = result.Id,
+            //        Type = result.Type,
+            //        Name = result.Name,
+            //        Brand = result.Brand,
+            //        DateOfManufacture = result.DateOfManufacture,
+            //        ShelfLife = result.ShelfLife,
+            //        StorageTemperature = 0
+            //    };
+            //    throw new FaultException<NullElementFault>(fault, "Element STORAGETEMPERATURE is not founded.", 
+            //                                                    new FaultCode("NullElementException"));
+            //}
+            result.StorageTemperature = int.Parse(storageTemperature.Value);
+
             return result;
         }
 

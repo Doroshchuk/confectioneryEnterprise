@@ -119,6 +119,7 @@
     <ShelfLife>2</ShelfLife>
     <DateOfManufacture>2018-12-15T00:00:00</DateOfManufacture>
     <Diameter>13.6</Diameter>
+    <StorageTemperature>15</StorageTemperature>
   </Pastry>
   <Pastry Id="6" Kind="Pie">
     <Type>Chocolate</Type>
@@ -144,5 +145,6 @@
     <ShelfLife>5</ShelfLife>
     <DateOfManufacture>2018-12-18T00:00:00</DateOfManufacture>
     <Diameter>5.8</Diameter>
+    <StorageTemperature>17</StorageTemperature>
   </Pastry>
 </Pastries>

@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel.Description;
+using ConfectionaryEnterprise.WcfService.Contract;
 
 namespace ConfectioneryEnterprise.Host
 {
@@ -16,6 +17,8 @@ namespace ConfectioneryEnterprise.Host
             //#Laboratorna #3
             using (var host = new ServiceHost(typeof(PastryService)))
             {
+                //Универсальный обработчик исключений + basicHttpBinding in app.config
+                host.Description.Behaviors.Add(new MainErrorHandlerBehavior());
                 host.Open();
                 Console.WriteLine("Host started...");
                 Console.ReadLine();

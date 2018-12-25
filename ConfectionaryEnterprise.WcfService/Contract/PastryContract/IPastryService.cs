@@ -1,4 +1,5 @@
-﻿using ConfectionaryEnterprise.WcfService.Contract.IngredientContract;
+﻿using ConfectionaryEnterprise.WcfService.Contract;
+using ConfectionaryEnterprise.WcfService.Contract.IngredientContract;
 using ConfectioneryEnterprise.Domain;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace ConfectioneryEnterprise.WcfService.Contract.PastryContract
         [OperationContract]
         bool IsFresh(int id);
 
+        [FaultContract(typeof(NullElementFault))]
         [OperationContract]
         Pastry GetPastry(int id);
 

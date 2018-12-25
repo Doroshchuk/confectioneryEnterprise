@@ -1,16 +1,15 @@
-﻿using System;
+﻿using ConfectioneryEnterprise.Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConfectioneryEnterprise.Domain
+namespace ConfectionaryEnterprise.WcfService.Contract
 {
-    [KnownType(typeof(BoxOfCandies))]
-    [KnownType(typeof(Pie))]
     [DataContract]
-    public class Pastry : BaseId<int>
+    public class NullElementFault : BaseId<int>
     {
         [DataMember]
         public string Type { get; set; }
@@ -22,9 +21,6 @@ namespace ConfectioneryEnterprise.Domain
         public string Brand { get; set; }
 
         [DataMember]
-        public List<Ingredient> Consistency { get; set; }
-
-        [DataMember]
         public int ShelfLife { get; set; }
 
         [DataMember]
@@ -32,10 +28,5 @@ namespace ConfectioneryEnterprise.Domain
 
         [DataMember]
         public int StorageTemperature { get; set; }
-
-        public Pastry()
-        {
-            Consistency = new List<Ingredient>();
-        }
     }
 }
